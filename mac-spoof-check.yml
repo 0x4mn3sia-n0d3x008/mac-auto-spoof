@@ -1,0 +1,26 @@
+name: Run MAC Spoof Script
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  spoof-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Clone Repo
+      uses: actions/checkout@v3
+
+    - name: 📦 Install macchanger
+      run: sudo apt update && sudo apt install -y macchanger
+
+    - name: 💾 Make script executable
+      run: chmod +x mac-auto-spoof.sh
+
+    - name: 🚀 Run MAC spoof script (simulated)
+      run: |
+        sudo ip link add test0 type dummy
+        sudo ip link set test0 up
+        sudo bash mac-auto-spoof.sh
+        sudo ip link delete test0
