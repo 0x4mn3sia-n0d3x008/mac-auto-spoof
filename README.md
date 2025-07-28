@@ -23,7 +23,7 @@ sudo apt install macchanger
 ### 1. Clone this repo
 
 ```bash
-git clone https://github.com/brabim666/mac-auto-spoof.git
+git clone https://github.com/0x4mn3sia-n0d3x008/mac-auto-spoof.git
 cd mac-auto-spoof
 ```
 
